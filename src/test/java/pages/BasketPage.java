@@ -31,13 +31,30 @@ public class BasketPage extends BasePage {
     }
 
     public void atBasketEtkinlikIsimleri() {
+        ArrayList<Karsilasmalar> kupon_detay_page_array = KuponDetayPage._kupondas_detay_list;
+        Karsilasmalar items = kupon_detay_page_array.get(kupon_detay_page_array.size()-1);
         for (int i = 0; i < findElements(etkinlikIsimleri).size(); i++){
             _basket_list.add(new Karsilasmalar(findElements(etkinlikIsimleri).get(i).getText().trim()));
         }
-
-        for (Karsilasmalar etkinlik_isim : _basket_list) {
-            log.info(etkinlik_isim.getName());
+        Karsilasmalar basket_item = _basket_list.get(_basket_list.size()-1);
+        while (!basket_item.getName().contains(items.getName())){
+            scrollDownScreen();
+            for (int i = 0; i < findElements(etkinlikIsimleri).size(); i++){
+                _basket_list.add(new Karsilasmalar(findElements(etkinlikIsimleri).get(i).getText().trim()));
+            }
+            basket_item = _basket_list.get(_basket_list.size()-1);
         }
+
+        List<Karsilasmalar> distinct = _basket_list.stream()
+                .filter(distinctByKey(Karsilasmalar::getName))
+                .collect(Collectors.toList());
+        for (Karsilasmalar item: distinct){
+            log.info(item.getName());
+        }
+
+        _basket_list.clear();
+        _basket_list.addAll(distinct);
+
     }
 
     public void compareKuponDetayToBasket() {
