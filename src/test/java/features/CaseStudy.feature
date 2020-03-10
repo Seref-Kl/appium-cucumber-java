@@ -16,4 +16,4 @@ Feature: CaseStudy Project
     And Hemen oyna butanuna tıkla
     Then Basket sayfasındayim
     When Basket sayfasindaki etkinlik isimlerini kaydet
-    And Kupondas detay ve basket sayfalarindaki etkinlik isimlerini karsilastir
+    Then Kupondas detay ve basket sayfalarindaki etkinlik isimlerini karsilastir

@@ -1,9 +1,8 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
 
 public class HomePage extends BasePage {
@@ -12,7 +11,7 @@ public class HomePage extends BasePage {
     By kupondas_button = By.xpath("(//android.widget.HorizontalScrollView[@resource-id=\"com.pordiva.nesine.android:id/n6_master_tab_layout\"]//android.widget.TextView)[5]");
 
 
-    public HomePage(AndroidDriver driver) {
+    public HomePage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 

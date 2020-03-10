@@ -2,6 +2,7 @@ package driver;
 
 
 import cucumber.api.Scenario;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -11,7 +12,7 @@ import java.net.URL;
 
 
 public class DriverFactory {
-    protected static AndroidDriver driver;
+    protected static AndroidDriver<MobileElement> driver;
     public static final String appName = "nesine.com.apk";
     public static final String APP_DIR = System.getProperty("user.dir") + "/apps";
 

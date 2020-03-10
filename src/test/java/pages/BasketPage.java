@@ -1,5 +1,6 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +21,7 @@ public class BasketPage extends BasePage {
     By basketPage = By.id(app_package_name + "basket_coupon_top");
     By etkinlikIsimleri = By.id(app_package_name + "teamName");
 
-    public BasketPage(AndroidDriver driver) {
+    public BasketPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 

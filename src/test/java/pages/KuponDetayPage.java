@@ -1,22 +1,19 @@
 package pages;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.RemoteWebElement;
 import util.Karsilasmalar;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
 public class KuponDetayPage extends BasePage {
 
-    private static final Logger log = LogManager.getLogger(KuponDetayPage.class);
+    private final Logger log = LogManager.getLogger(KuponDetayPage.class);
 
     public static final ArrayList<Karsilasmalar> _kupondas_detay_list = new ArrayList<>();
 
@@ -24,7 +21,7 @@ public class KuponDetayPage extends BasePage {
     By etkinlikisimleri = By.xpath("//android.widget.TextView[@resource-id='com.pordiva.nesine.android:id/tv_teams']");
     By hemen_oyna_button = By.id(app_package_name + "status_btn");
 
-    public KuponDetayPage(AndroidDriver driver) {
+    public KuponDetayPage(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 

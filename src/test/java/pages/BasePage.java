@@ -24,12 +24,12 @@ public class BasePage {
     private final Logger log = LogManager.getLogger(BasePage.class);
 
 
-    protected AndroidDriver driver;
+    protected AndroidDriver<MobileElement> driver;
     private TouchAction action;
 
     String app_package_name = "com.pordiva.nesine.android:id/";
 
-    public BasePage(AndroidDriver driver) {
+    public BasePage(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
         this.action = new TouchAction(driver);
     }

@@ -187,7 +187,7 @@ public class Steps extends DriverFactory {
         }
     }
 
-    @And("^Kupondas detay ve basket sayfalarindaki etkinlik isimlerini karsilastir$")
+    @Then("^Kupondas detay ve basket sayfalarindaki etkinlik isimlerini karsilastir$")
     public void kupondasDetayVeBasketSayfalarindakiEtkinlikIsimleriniKarsilastir() {
         try {
             new BasketPage(driver).compareKuponDetayToBasket();
